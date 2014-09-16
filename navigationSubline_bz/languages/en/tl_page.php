@@ -32,4 +32,4 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_page']['subLineBz']          = array('Zweite Zeile für Navigationspunkt', 'Bitte geben Sie hier den Text für die zweite Zeile unterhalb des Navigationspunktes ein.');
+$GLOBALS['TL_LANG']['tl_page']['subLineBz']          = array('Subline for navigation title', 'Please enter your subline for the navigation item ');

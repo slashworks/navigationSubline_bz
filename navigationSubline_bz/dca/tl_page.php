@@ -55,5 +55,6 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['subLineBz'] =  array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_page']['subLineBz'],
 	'exclude'                 => true,
 	'inputType'               => 'text',
-	'eval'                    => array('maxlength'=>255, 'tl_class' => 'clr long')
+	'eval'                    => array('maxlength'=>255, 'tl_class' => 'clr long'),
+	'sql'                     => "varchar(255) NOT NULL default ''"
 );
