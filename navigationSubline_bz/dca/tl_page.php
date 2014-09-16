@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
+<?php
 
 /**
  * Contao Open Source CMS
@@ -27,6 +27,8 @@
  * @license    LGPL
  * @filesource
  */
+
+$GLOBALS['TL_DCA']['tl_page']['list']['label']['label_callback'] = array('tl_navigationSubline', 'addSublineToLabel');
 
 
 $GLOBALS['TL_DCA']['tl_page']['palettes']['regular'] = str_replace
@@ -58,3 +60,21 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['subLineBz'] =  array
 	'eval'                    => array('maxlength'=>255, 'tl_class' => 'clr long'),
 	'sql'                     => "varchar(255) NOT NULL default ''"
 );
+
+class tl_navigationSubline extends tl_page
+{
+
+    public function addSublineToLabel($row, $label, DataContainer $dc=null, $imageAttribute='', $blnReturnImage=false, $blnProtected=false)
+    {
+
+        if(!empty($row['subLineBz'])) {
+
+            $label .= ' <span style="color:#b3b3b3;padding-left:3px">[' . $row['subLineBz'] . ']</span>';
+
+        }
+
+        return parent::addIcon($row, $label, $dc, $imageAttribute, $blnReturnImage, $blnProtected);
+
+    }
+
+}
